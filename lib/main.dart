@@ -33,11 +33,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            fit: BoxFit.fitHeight,
-            image: AssetImage('assets/images/my_bg.png')),
-      ),
-    ));
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fitHeight,
+                  image: AssetImage('assets/images/my_bg.png')),
+            ),
+            child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                width: MediaQuery.of(context).size.width,
+                child: ElevatedButton.icon(
+                  icon: const Icon(
+                    Icons.phone,
+                    color: Colors.white,
+                  ),
+                  label: const Text('Login With Phone',
+                      style: TextStyle(color: Colors.white)),
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.black)),
+                  onPressed: () {},
+                ),
+              )
+            ])));
   }
 }
